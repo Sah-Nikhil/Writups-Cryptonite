@@ -72,12 +72,12 @@ switched v3sper to bandit0 (server knows bandit0 username not my[v3sper] usernam
 
 ## Steps taken
 <p>
-    
+1. Found the *-* file using the **ls** command
 </p>
 
 ## Issues Faced
 <p>
-   
+> unable to open the dash file using the **cat** command
 </p>
 
 ### Mitigation steps
