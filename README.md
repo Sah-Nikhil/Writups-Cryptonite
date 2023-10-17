@@ -17,7 +17,7 @@
 2. connected to Bandit server using <b>bandit0</b> username
 
 ## Issues Faced
-> Connection issue as i used *v3sper@bandit.labs.overthewire.org -p 2220* to login initially
+>Connection issue as i used *v3sper@bandit.labs.overthewire.org -p 2220* to login initially
 
 > ### Mitigation steps
 > switched v3sper to bandit0 (server knows bandit0 username not my [v3sper] username)
