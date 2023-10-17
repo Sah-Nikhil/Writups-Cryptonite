@@ -19,8 +19,8 @@
 ## Issues Faced
 > Connection issue as i used *v3sper@bandit.labs.overthewire.org -p 2220* to login initially
 
-### Mitigation steps
-switched v3sper to bandit0 (server knows bandit0 username not my [v3sper] username)
+> ### Mitigation steps
+> switched v3sper to bandit0 (server knows bandit0 username not my [v3sper] username)
 
 
 
@@ -35,7 +35,7 @@ switched v3sper to bandit0 (server knows bandit0 username not my [v3sper] userna
 ## Issues Faced
 >none
 
-### Mitigation steps
+>### Mitigation steps
 
 
 
@@ -50,7 +50,7 @@ switched v3sper to bandit0 (server knows bandit0 username not my [v3sper] userna
 
 > unable to open the dash file using the **cat** command only
 
-### Mitigation steps
-instead of using *cat -* used *cat **./**-*
-#### Reference taken from
-<a href='https://unix.stackexchange.com/questions/189251/how-to-read-dash-files'>Stackexchange</a>
+> ### Mitigation steps
+> instead of using *cat -* used *cat **./**-*
+> #### Reference taken from
+> <a href='https://unix.stackexchange.com/questions/189251/how-to-read-dash-files'>Stackexchange</a>
