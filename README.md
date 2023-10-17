@@ -17,7 +17,7 @@
 2. connected to Bandit server using <b>bandit0</b> username
 
 ## Issues Faced
->Connection issue as i used *v3sper@bandit.labs.overthewire.org -p 2220* to login initially
+> Connection issue as i used *v3sper@bandit.labs.overthewire.org -p 2220* to login initially
 
 > ### Mitigation steps
 > switched v3sper to bandit0 (server knows bandit0 username not my [v3sper] username)
@@ -33,9 +33,9 @@
 3. logged out of bandit0 and logged into bandit1 using the given <a href='NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL'>password</a>
 
 ## Issues Faced
->none
+> none
 
->### Mitigation steps
+> ### Mitigation steps
 
 
 
@@ -54,3 +54,34 @@
 > instead of using *cat -* used *cat **./**-*
 > #### Reference taken from
 > <a href='https://unix.stackexchange.com/questions/189251/how-to-read-dash-files'>Stackexchange</a>
+
+
+
+# Level 3
+
+## Steps taken
+
+1. Logged in using the previous level's answer
+2. Found the *spaces in this filename* file using the **ls** command
+3. Extracted the <a href='aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG'>password</a> using **cat** command.
+    >I wrote cat and typed in sp and hit the **tab** key on the keyboard which led to the autofill of the filename [command = cat spaces\ in\ this\ filename ]
+
+## Issues Faced
+
+> none
+
+> ### Mitigation steps
+
+
+
+# Level 4
+
+## Steps taken
+
+1. 
+
+## Issues Faced
+
+> 
+
+> ### Mitigation steps
