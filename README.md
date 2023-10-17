@@ -72,20 +72,12 @@ switched v3sper to bandit0 (server knows bandit0 username not my[v3sper] usernam
 
 ## Steps taken
 <p>
-    <ol>
-        <li>
-        
-        </li>
-    </ol>
+    
 </p>
 
 ## Issues Faced
 <p>
-    <ul>
-        <li>
-        
-        </li>
-    </ul>
+   
 </p>
 
 ### Mitigation steps
