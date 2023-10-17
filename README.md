@@ -7,7 +7,7 @@
 ## Misc
 
 ### Resources used to brush up on topics
-<a href:'https://www.markdownguide.org/basic-syntax/'> Markdown </a>
+<a href='https://www.markdownguide.org/basic-syntax/'> Markdown </a>
 
 
 
@@ -50,7 +50,7 @@ switched v3sper to bandit0 (server knows bandit0 username not my[v3sper] usernam
         used commmand <i>ls</i> to find the readme file
         </li>
         <li>used <i>cat readme</i> to oepn readme and extract password
-        <li>logged out of bandit0 and logged into bandit1 using the given <a href:'NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL'>password</a>
+        <li>logged out of bandit0 and logged into bandit1 using the given <a href='NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL'>password</a>
         </li>
     </ol>
 </p>
