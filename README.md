@@ -115,7 +115,7 @@
         > -file09
 4. Found the password for the next level in the *./-file07* file
 5. Went through all the given files using the **cat** command
-6. Extracted the <a href='2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe'>password</a> using the **cat** *./-file0x* command where x = file no. where the file was found [07]
+6. Extracted the <a href='lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR'>password</a> using the **cat** *./-file0x* command where x = file no. where the file was found [07]
 ## Issues Faced
 
 > none
