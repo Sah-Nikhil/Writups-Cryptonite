@@ -85,7 +85,7 @@
         >.
         > ./.hidden
 4. FOund the password for the next level in the *./. hidden* file
-5. Extracted the <a href=''>password</a> using the **cat** *./.hidden* command
+5. Extracted the <a href='2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe'>password</a> using the **cat** *./.hidden* command
 
 ## Issues Faced
 
