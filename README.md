@@ -63,8 +63,8 @@
 
 1. Logged in using the previous level's answer
 2. Found the *spaces in this filename* file using the **ls** command
-3. Extracted the <a href='aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG'>password</a> using **cat** command.
-    >I wrote cat and typed in sp and hit the **tab** key on the keyboard which led to the autofill of the filename [command = cat spaces\ in\ this\ filename ]
+3. Extracted the <a href='aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG'>password</a> using **cat** command
+    >I wrote cat and typed in sp and hit the **tab** key on the keyboard which led to the autofill of the filename [command = *cat spaces\ in\ this\ filename* ]
 
 ## Issues Faced
 
@@ -78,10 +78,17 @@
 
 ## Steps taken
 
-1. 
+1. Logged in using the previous level's answer
+2. Found the *inhere* directory using the **ls** command, opened it using the **cd** command [ ***cd*** *inhere* ]
+3. Used the find command to find the hidden file(s):
+    > Found 2 files 
+        >.
+        > ./.hidden
+4. FOund the password for the next level in the *./. hidden* file
+5. Extracted the <a href=''>password</a> using the **cat** *./.hidden* command
 
 ## Issues Faced
 
-> 
+> none
 
 > ### Mitigation steps
