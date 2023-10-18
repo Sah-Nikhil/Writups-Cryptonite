@@ -84,9 +84,38 @@
     > Found 2 files 
         >.
         > ./.hidden
-4. FOund the password for the next level in the *./. hidden* file
+4. Found the password for the next level in the *./. hidden* file
 5. Extracted the <a href='2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe'>password</a> using the **cat** *./.hidden* command
 
+## Issues Faced
+
+> none
+
+> ### Mitigation steps
+
+
+
+# Level 5
+
+## Steps taken
+
+1. Logged in using the previous level's answer
+2. Found the *inhere* directory using the **ls** command, opened it using the **cd** command [ ***cd*** *inhere* ]
+3. Used the find command to find the hidden file(s):
+    > Found 10 files 
+        > -file00
+        > -file01
+        > -file02
+        > -file03
+        > -file04
+        > -file05
+        > -file06
+        > -file07
+        > -file08
+        > -file09
+4. Found the password for the next level in the *./-file07* file
+5. Went through all the given files using the **cat** command
+6. Extracted the <a href='2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe'>password</a> using the **cat** *./-file0x* command where x = file no. where the file was found [07]
 ## Issues Faced
 
 > none
