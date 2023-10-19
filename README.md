@@ -1,6 +1,6 @@
 # Writups-Cryptonite
 
-<p>Writeup compilation for Bandit attempt</p>
+Writeup compilation for Bandit attempt
 
 <hr>
 
@@ -101,23 +101,70 @@
 
 1. Logged in using the previous level's answer
 2. Found the *inhere* directory using the **ls** command, opened it using the **cd** command [ ***cd*** *inhere* ]
-3. Used the find command to find the hidden file(s):
-    > Found 10 files 
-        > -file00
-        > -file01
-        > -file02
-        > -file03
-        > -file04
-        > -file05
-        > -file06
-        > -file07
-        > -file08
-        > -file09
+3. Found 10 files 
+    > -file00
+    > -file01
+    > -file02
+    > -file03
+    > -file04
+    > -file05
+    > -file06
+    > -file07
+    > -file08
+    > -file09
 4. Found the password for the next level in the *./-file07* file
 5. Went through all the given files using the **cat** command
-6. Extracted the <a href='lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR'>password</a> using the **cat** *./-file0x* command where x = file no. where the file was found [07]
+6. Extracted the <a href='lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR'>password</a> using the **cat** *./-file0x* command where x = file no. where the file was found [ 07 ]
+
 ## Issues Faced
 
 > none
 
 > ### Mitigation steps
+
+
+
+# Level 6
+
+## Steps taken
+
+1. Logged in using the previous level's answer
+2. Found the *inhere* directory using the **ls** command, opened it using the **cd** command [ ***cd*** *inhere* ]
+3. Found 18 directories 
+    > maybehere00
+    > maybehere01
+    > maybehere02
+    > maybehere03
+    > maybehere04
+    > maybehere05
+    > maybehere06
+    > maybehere07
+    > maybehere08
+    > maybehere09
+    > maybehere10
+    > maybehere11
+    > maybehere12
+    > maybehere13
+    > maybehere14
+    > maybehere15
+    > maybehere16
+    > maybehere17
+4. Used the **cd** command to scan through each directory
+5. Found the password for the next level in the *maybehere07* file
+> Went through all the given files using the **cat** command
+> Tedious process
+> Reffered to google and other sources to learn a different method to find the solution more efficiently.
+6. Extracted the <a href='P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU'>password</a> using the **find ./ -type f -size 1033c ! -executable** command where x = file no. where the file was found [07]
+
+## Issues Faced
+
+> way too many directories need to be opened
+    > need to find an efficient way to open multiple directories
+    > this will save time and increase efficiency
+
+> ### Mitigation steps
+    >used **find /dir1 /dir2 -type f** command from <a href='https://www.cyberciti.biz/faq/how-to-search-multiple-directories-with-find-command/#:~:text=So%20you%20want%20to,directories%20but%20not%20all%20folders.&text=nixCraft%20is%20a%20one%2Dperson%20operation.'>cyberciti.biz</a>
+        >here */dir1 /dir2* are equal to *maybhere0x maybehere0(x+1)*
+    >used **find ./ -type f -size 1033c ! -executable** which ultimately helped me find the password perfectly
+        > learnt the method from <a href='https://mayadevbe.me/posts/overthewire/bandit/level6/'>mayadevbe</a> and <a href='https://medium.com/secttp/overthewire-bandit-level-5-f2df304da190'>medium</a>. 
+    >***NOTE*:** Searching google for *how to find a specific file in a directory using unix/linux commands didnt work.
