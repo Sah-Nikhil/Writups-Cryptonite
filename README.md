@@ -163,7 +163,7 @@ Writeup compilation for Bandit attempt
     > this will save time and increase efficiency
 
 > ### Mitigation steps
-    >used **find /dir1 /dir2 -type f** command from <a href='https://www.cyberciti.biz/faq/how-to-search-multiple-directories-with-find-command/#:~:text=So%20you%20want%20to,directories%20but%20not%20all%20folders.&text=nixCraft%20is%20a%20one%2Dperson%20operation.'>cyberciti.biz</a>
+    >used **find /dir1 /dir2 -type f** command from <a href='https://www.cyberciti.biz/faq/how-to-search-multiple-directories-with-find-command/#:~:text=So%20you%20want%20to,directories%20but%20not%20all%20folders.&text=nixCraft%20is%20a%20one%2Dperson%20operation.'>cyberciti</a>
         >here */dir1 /dir2* are equal to *maybhere0x maybehere0(x+1)*
     >used **find ./ -type f -size 1033c ! -executable** which ultimately helped me find the password perfectly
         > learnt the method from <a href='https://mayadevbe.me/posts/overthewire/bandit/level6/'>mayadevbe</a> and <a href='https://medium.com/secttp/overthewire-bandit-level-5-f2df304da190'>medium</a>. 
@@ -186,7 +186,7 @@ Writeup compilation for Bandit attempt
 > unable to locate file on server.
 
 > ### Mitigation steps
->used chat gpt to find what am i missing in the command
+>used chat gpt and <a href='https://exploreinformatica.com/how-to-exclude-all-permission-denied-messages-when-using-find-command/'>exploreinformatica</a> to find what am i missing in the command
     > gpt advises to add a descriptor for standard error and and **/dev/null** to remove any files which  contain a standard error
     
 #### More thoughts
