@@ -168,3 +168,26 @@ Writeup compilation for Bandit attempt
     >used **find ./ -type f -size 1033c ! -executable** which ultimately helped me find the password perfectly
         > learnt the method from <a href='https://mayadevbe.me/posts/overthewire/bandit/level6/'>mayadevbe</a> and <a href='https://medium.com/secttp/overthewire-bandit-level-5-f2df304da190'>medium</a>. 
     >***NOTE*:** Searching google for *how to find a specific file in a directory using unix/linux commands didnt work.
+    
+
+
+# Level 7
+
+## Steps taken
+
+1. Logged in using the previous level's answer
+2. used **find -user bandit7 -group bandit6 -size 33c -executable** but didn't find any file
+3. used **find / -user bandit7 -group bandit6 -size 33c 2>/dev/null** to locate directory with the file containing password
+
+4. Extracted the <a z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S'>password</a> using the **cat** */var/lib/dpkg/info/bandit7.password* command.
+
+## Issues Faced
+
+> unable to locate file on server.
+
+> ### Mitigation steps
+>used chat gpt to find what am i missing in the command
+    > gpt advises to add a descriptor for standard error and and **/dev/null** to remove any files which  contain a standard error
+    
+#### More thoughts
+>still unable to undestand how **/dev/null** works.
