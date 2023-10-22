@@ -191,3 +191,60 @@ Writeup compilation for Bandit attempt
     
 #### More thoughts
 >still unable to undestand how **/dev/null** works.
+
+
+# Level 7
+
+## Steps taken
+
+- Since we are searching for a string here, we need to use the grep command.
+  - `grep "millionth" data.txt`
+
+  This gives an output that shows the line containing the word 'millionth' in the text file data.txt and provides the password for the next level.
+
+# Level 8
+
+## Steps taken
+
+- The grep command does not give us any option of counting the occurrence of a particular line of text. Thus, looking at the given set of possible useful commands, uniq catches the eye. However, according to uniq's description, we can only filter adjacent matching lines using this command. Hence we need to sort the data first. This gives us the first possibility of our command: 
+- `cat data.txt | sort | uniq`
+
+  But this doesn't work because if we give no options with the uniq command, matching lines are merged to the first occurrence. Hence we use it along with the -u option which prints unique lines.
+- `cat data.txt | sort | uniq -u`
+
+  And we get our password!
+
+# Level 9
+
+## Steps taken
+
+- We first need to find human-readable strings in the file. For this, we use the strings command, which can extract human-readable text. The string also needs to have '=' in it, so to search for '=' in a string, we use the grep command. Thus our final command will look like:
+- `strings data.txt | grep "="`
+
+  When we do this, we get a list of strings with '=' sign in them, and we can easily find the one that starts with multiple '=' signs, and that is our password.
+
+# Level 10
+
+## Steps taken
+
+- The clue clearly mentions base64 encoded data, hence the first thing that strikes is the base64 decode command.
+- We then use `cat data.txt | base64 -d` command to get the desired output.
+
+# Level 11
+
+## Steps taken
+
+- This is a case of position rotation, more specifically the Rot 13 cipher, which is a special case of Caesar cipher. Hence we need to use the 'tr' command.
+- The tr command is a UNIX command-line utility for translating or deleting characters.
+- Hence we first cat out the file and then pipe it to the tr command, which does the cipher decoding.
+- `cat data.txt | tr a-zA-Z n-za-mN-ZA-M`
+Gives us the required output. Here a-z represents lowercase input, A-Z represents uppercase input, and n-za-m is the corresponding lowercase output [a+13 characters is n, and this is a symbolic way of writing all letters without actually having to list them individually. n-za-m means letters from n to z and then a to m].
+
+
+
+
+
+
+
+
+
