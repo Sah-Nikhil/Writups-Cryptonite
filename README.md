@@ -193,7 +193,7 @@ Writeup compilation for Bandit attempt
 >still unable to undestand how **/dev/null** works.
 
 
-# Level 7
+# Level 8
 
 ## Steps taken
 
@@ -202,7 +202,7 @@ Writeup compilation for Bandit attempt
 
   This gives an output that shows the line containing the word 'millionth' in the text file data.txt and provides the password for the next level.
 
-# Level 8
+# Level 9
 
 ## Steps taken
 
@@ -214,7 +214,7 @@ Writeup compilation for Bandit attempt
 
   And we get our password!
 
-# Level 9
+# Level 10
 
 ## Steps taken
 
@@ -223,14 +223,14 @@ Writeup compilation for Bandit attempt
 
   When we do this, we get a list of strings with '=' sign in them, and we can easily find the one that starts with multiple '=' signs, and that is our password.
 
-# Level 10
+# Level 11
 
 ## Steps taken
 
 - The clue clearly mentions base64 encoded data, hence the first thing that strikes is the base64 decode command.
 - We then use `cat data.txt | base64 -d` command to get the desired output.
 
-# Level 11
+# Level 12
 
 ## Steps taken
 
