@@ -187,7 +187,7 @@ Writeup compilation for Bandit attempt
 
 > ### Mitigation steps
 >used chat gpt and <a href='https://exploreinformatica.com/how-to-exclude-all-permission-denied-messages-when-using-find-command/'>exploreinformatica</a> to find what am i missing in the command
-    > gpt advises to add a descriptor for standard error and and **/dev/null** to remove any files which  contain a standard error
+   - gpt advises to add a descriptor for standard error and and **/dev/null** to remove any files which  contain a standard error
     
 #### More thoughts
 >still unable to undestand how **/dev/null** works.
@@ -197,49 +197,90 @@ Writeup compilation for Bandit attempt
 
 ## Steps taken
 
-- Since we are searching for a string here, we need to use the grep command.
-  - `grep "millionth" data.txt`
+1. Since we are searching for a string here, we need to use the grep command.
+    - `grep "millionth" data.txt`
 
-  This gives an output that shows the line containing the word 'millionth' in the text file data.txt and provides the password for the next level.
+2. output shows the line containing the word *millionth* in the text file ***data.txt*** and provides the <a href='TESKZC0XvTetK0S9xNwm25STk5iWrBvP'>password</a> for the next level.
+
+## Issues Faced
+
+### Mitigation steps
+
+
 
 # Level 9
 
 ## Steps taken
 
-- The grep command does not give us any option of counting the occurrence of a particular line of text. Thus, looking at the given set of possible useful commands, uniq catches the eye. However, according to uniq's description, we can only filter adjacent matching lines using this command. Hence we need to sort the data first. This gives us the first possibility of our command: 
+1. used **uniq**
+2. we can filter adjacent matching lines using this command.
+3. Hence we sort the data first. 
+4. command used: 
 - `cat data.txt | sort | uniq`
 
-  But this doesn't work because if we give no options with the uniq command, matching lines are merged to the first occurrence. Hence we use it along with the -u option which prints unique lines.
+
+## Issues faced
+>grep does not give any option of counting the occurrence of a particular line of text.
+>upon using `cat data.txt | sort | uniq` desired result isnt shown (buttload of results shown) because if no options are given with the uniq command, matching lines are merged to the first occurrence.
+
+### Mitigation steps
+>use **uniq** along with the *-u* option which prints unique lines.
 - `cat data.txt | sort | uniq -u`
 
-  And we get our password!
+>This give the desired <a href='EN632PlfYiZbn3PhVK3XOGSlNInNE00t'> password</a>
+
+
 
 # Level 10
 
 ## Steps taken
 
-- We first need to find human-readable strings in the file. For this, we use the strings command, which can extract human-readable text. The string also needs to have '=' in it, so to search for '=' in a string, we use the grep command. Thus our final command will look like:
+1. find human-readable strings in the file. 
+2. use the **strings** command, which extracts human-readable text.
+3. ##### The string also needs to have '=' in it
+4. to search for '=' in a string use the **grep** command. 
+5. final command = 
 - `strings data.txt | grep "="`
 
-  When we do this, we get a list of strings with '=' sign in them, and we can easily find the one that starts with multiple '=' signs, and that is our password.
+6. upon execution of this command the result is a list of strings with '=' sign in them, 
+7. one that starts with multiple '=' signs, is our <a href='G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s'>password</a>.
+
+## Issues faced
+
+### Mitigation steps
+
+
 
 # Level 11
 
 ## Steps taken
 
-- The clue clearly mentions base64 encoded data, hence the first thing that strikes is the base64 decode command.
-- We then use `cat data.txt | base64 -d` command to get the desired output.
+1. As per clue -> data is base64 encoded. 
+hence use **base64 decode** command.
+2. Then use `cat data.txt | base64 -d` command to get the desired output:
+` The password is **6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM** `
+
 
 # Level 12
 
 ## Steps taken
 
-- This is a case of position rotation, more specifically the Rot 13 cipher, which is a special case of Caesar cipher. Hence we need to use the 'tr' command.
-- The tr command is a UNIX command-line utility for translating or deleting characters.
-- Hence we first cat out the file and then pipe it to the tr command, which does the cipher decoding.
+1. **Position rotation**
+2. first cat out the file and then pipe it to the tr command, which does the cipher decoding.
 - `cat data.txt | tr a-zA-Z n-za-mN-ZA-M`
-Gives us the required output. Here a-z represents lowercase input, A-Z represents uppercase input, and n-za-m is the corresponding lowercase output [a+13 characters is n, and this is a symbolic way of writing all letters without actually having to list them individually. n-za-m means letters from n to z and then a to m].
+3. this gives the required output: `The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv`
 
+
+
+***NOTE:***
+a-z represents lowercase and A-Z represents uppercase input(s) respectively, and n-za-m is the corresponding lowercase output [a+13 characters is n, and this is a symbolic way of writing all letters without actually having to list them individually. n-za-m means letters from n to z and then a to m].
+
+## Issues faced
+> Understanding what is a Rot13 cipher -> a special case of Caesar cipher. 
+
+### Mitigation steps
+> used the 'tr' command.
+    > The tr command is a UNIX command-line utility for translating or deleting characters.
 
 
 
