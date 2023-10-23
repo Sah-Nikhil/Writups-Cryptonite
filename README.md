@@ -260,6 +260,11 @@ hence use **base64 decode** command.
 2. Then use `cat data.txt | base64 -d` command to get the desired output:
 ` The password is **6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM** `
 
+## Issues faced
+
+### Mitigation steps
+
+
 
 # Level 12
 
@@ -269,8 +274,6 @@ hence use **base64 decode** command.
 2. first cat out the file and then pipe it to the tr command, which does the cipher decoding.
 - `cat data.txt | tr a-zA-Z n-za-mN-ZA-M`
 3. this gives the required output: `The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv`
-
-
 
 ***NOTE:***
 a-z represents lowercase and A-Z represents uppercase input(s) respectively, and n-za-m is the corresponding lowercase output [a+13 characters is n, and this is a symbolic way of writing all letters without actually having to list them individually. n-za-m means letters from n to z and then a to m].
