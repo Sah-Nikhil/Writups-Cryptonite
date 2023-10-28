@@ -286,9 +286,115 @@ a-z represents lowercase and A-Z represents uppercase input(s) respectively, and
     > The tr command is a UNIX command-line utility for translating or deleting characters.
 
 
+# Level 12 → Level 13
 
+## Steps Taken
 
+1. Create a directory under /tmp: `mkdir /tmp/idk`.
+2. Copy data.txt to the new directory: `cp data.txt /tmp/idk`.
+3. Reverse the hexdump and save it as "bandit" using xxd: `xxd -r data.txt > bandit`.
+4. Identify the compression method by checking the file type using the `file` command.
+5. Decompress the file accordingly, changing extensions and using commands such as `mv`, `gunzip`, `bzip2`, and `tar -xf`.
+6. Repeat until you reach the end and find the password.
 
+## Passwords
 
+The passwords found during the process are as follows:
 
+- Level 13: The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 
+# Level 13 → Level 14
+
+## Steps Taken
+
+1. Login to the machine.
+2. Find and use the provided SSH private key to log in as bandit14.
+3. Go to the /etc/bandit_pass/ directory.
+4. Read the bandit14 file to get the next password.
+
+## Passwords
+
+- Level 14: The password is 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+# Level 14 → Level 15
+
+## Steps Taken
+
+1. Connect to localhost on port 30000.
+2. Submit the password for the current level (bandit14).
+3. Receive the password for the next level.
+
+## Passwords
+
+- Level 15: The password is BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+# Level 15 → Level 16
+
+## Steps Taken
+
+1. Connect to localhost on port 30001 using SSL.
+2. Submit the password for the current level (bandit15).
+3. Receive the password for the next level.
+
+## Passwords
+
+- Level 16: The password is cluFn7wTiGryunymYOu4RcffSxQluehd
+
+# Level 16 → Level 17
+
+## Steps Taken
+
+1. Use nmap to find which ports in the range 31000-32000 have a server listening on them.
+2. Identify the server that speaks SSL and will provide the next credentials.
+3. Connect to that server and submit the password for the current level (bandit16).
+4. Receive the password for the next level.
+
+## Passwords
+
+- Level 17: The password is xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
+
+# Level 17 → Level 18
+
+## Steps Taken
+
+1. Check the configuration in /etc/cron.d/ for the cron job.
+2. Identify the command executed by the cron job.
+3. Run the command manually to retrieve the password.
+
+## Passwords
+
+- Level 18: The password is kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+# Level 18 → Level 19
+
+## Steps Taken
+
+1. Attempt to log in as bandit18, but you'll be logged out immediately due to the .bashrc configuration.
+2. Log in using SSH with the "-T" option to prevent being logged out immediately.
+3. List the files in the home directory.
+4. Locate the "readme" file and read it to obtain the password.
+
+## Passwords
+
+- Level 19: The password is IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+# Level 19 → Level 20
+
+## Steps Taken
+
+1. Identify and execute the setuid binary in the home directory.
+2. Learn how to use the setuid binary to retrieve the password.
+3. Retrieve the password from the usual location (/etc/bandit_pass).
+
+## Passwords
+
+- Level 20: The password is GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+## Steps Taken
+
+1. Identify and execute the setuid binary in the home directory.
+2. Learn how to use the setuid binary to retrieve the password.
+3. Retrieve the password from the usual location (/etc/bandit_pass).
+
+## Passwords
+
+- Level 20: The password is GbKksEFF4yrVs6il55v6gwY5aVje5f0j
