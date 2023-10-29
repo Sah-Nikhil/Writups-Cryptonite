@@ -303,98 +303,85 @@ The passwords found during the process are as follows:
 
 - Level 13: The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 
-# Level 13 → Level 14
+Certainly! Here's the provided content reformatted into the requested markdown style:
 
-## Steps Taken
 
-1. Login to the machine.
-2. Find and use the provided SSH private key to log in as bandit14.
-3. Go to the /etc/bandit_pass/ directory.
-4. Read the bandit14 file to get the next password.
+### Level 13 -> 14
+- **Goal**: Log in to the next level using a private SSH key.
+- **Commands**:
+  ```bash
+  find                         # shows a file `sshkey.private`
+  ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+  ```
+- **Notes**:
+  - After `ssh -i`, type the filename containing the key, then `username@host` and `port`.
 
-## Passwords
+### Level 14 -> 15
+- **Goal**: Submit the password of the current level to port 30000 on localhost.
+- **Commands**:
+  ```bash
+  cat /etc/bandit_pass/bandit14  # since the password for level 14 is in this file
+  telnet localhost 30000         # specify the host and port
+  # Paste the password used for level 14
+  ```
+- **Notes**:
+  - `telnet` establishes a connection; specify the host and port.
 
-- Level 14: The password is 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+### Level 15 -> 16
+- **Goal**: Submit the password of the current level to port 30001 on localhost using SSL encryption.
+- **Commands**:
+  ```bash
+  openssl s_client -connect localhost:30001
+  # Enter the password and receive the password for the next level
+  ```
+- **Notes**:
+  - `openssl s_client -connect <host>:<port>`
 
-# Level 14 → Level 15
+### Level 16 -> 17
+- **Goal**: Find the right port with a server running SSL.
+- **Commands**:
+  ```bash
+  nmap -p 31000-32000 localhost  # lists 5 ports
+  openssl s_client -status localhost:<port>  # check the five ports; when you submit the password to port 31790, it gives you the RSA private key. Copy the key to a file.
+  chmod 400 <path of file>    # changing permission to not allow other users to read the file
+  ssh -i <path of file> bandit17@bandit.labs.overthewire.org -p 2220
+  ```
+- **Notes**:
+  - It's important to change the permission of the file; otherwise, it shows an error.
+  - `nmap` scans ports; you can specify the scanning type.
+  - Once you log in to level 17, get the password of level 17: `cat /etc/bandit_pass/<user>`
 
-## Steps Taken
+### Level 17 -> 18
+- **Goal**: Compare two files; the password is in the new file but not in the old one.
+- **Command**:
+  ```bash
+  diff passwords.new passwords.old  # compares files line by line
+  ```
+- **Notes**:
+  - `diff <file1> <file2>` compares files line by line.
 
-1. Connect to localhost on port 30000.
-2. Submit the password for the current level (bandit14).
-3. Receive the password for the next level.
+### Level 18 -> 19
+- **Goal**: The password is in the `readme` file, but when you try to login, you get logged out.
+- **Command**:
+  ```bash
+  ssh bandit18@bandit.labs.overthewire.org -p 2220 -f cat readme
+  # After you enter the password, the `cat` command is executed, and you get the password.
+  ```
+- **Notes**:
+  - `ssh -f <command>` helps execute the command.
 
-## Passwords
+### Level 19 -> 20
+- **Goal**: Use `setuid` to find the password by reading `/etc/bandit_pass/bandit20`.
+- **Commands**:
+  ```bash
+  ls                          # shows `bandit20-do`
+  file bandit20-do            # shows it's an executable file
+  ./bandit20-do               # explains how to use this and its function
+  ./bandit20-do cat /etc/bandit_pass/bandit20
+  ```
+- **Notes**:
+  - Normally, only user bandit20 can access `/etc/bandit_pass/bandit20`. Using `setuid`, bandit19 (here) can access it.
+  - Use `./bandit20-do` (here); else, use the executable file.
 
-- Level 15: The password is BfMYroe26WYalil77FoDi9qh59eK5xNr
-
-# Level 15 → Level 16
-
-## Steps Taken
-
-1. Connect to localhost on port 30001 using SSL.
-2. Submit the password for the current level (bandit15).
-3. Receive the password for the next level.
-
-## Passwords
-
-- Level 16: The password is cluFn7wTiGryunymYOu4RcffSxQluehd
-
-# Level 16 → Level 17
-
-## Steps Taken
-
-1. Use nmap to find which ports in the range 31000-32000 have a server listening on them.
-2. Identify the server that speaks SSL and will provide the next credentials.
-3. Connect to that server and submit the password for the current level (bandit16).
-4. Receive the password for the next level.
-
-## Passwords
-
-- Level 17: The password is xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
-
-# Level 17 → Level 18
-
-## Steps Taken
-
-1. Check the configuration in /etc/cron.d/ for the cron job.
-2. Identify the command executed by the cron job.
-3. Run the command manually to retrieve the password.
-
-## Passwords
-
-- Level 18: The password is kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
-
-# Level 18 → Level 19
-
-## Steps Taken
-
-1. Attempt to log in as bandit18, but you'll be logged out immediately due to the .bashrc configuration.
-2. Log in using SSH with the "-T" option to prevent being logged out immediately.
-3. List the files in the home directory.
-4. Locate the "readme" file and read it to obtain the password.
-
-## Passwords
-
-- Level 19: The password is IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
-
-# Level 19 → Level 20
-
-## Steps Taken
-
-1. Identify and execute the setuid binary in the home directory.
-2. Learn how to use the setuid binary to retrieve the password.
-3. Retrieve the password from the usual location (/etc/bandit_pass).
-
-## Passwords
-
-- Level 20: The password is GbKksEFF4yrVs6il55v6gwY5aVje5f0j
-## Steps Taken
-
-1. Identify and execute the setuid binary in the home directory.
-2. Learn how to use the setuid binary to retrieve the password.
-3. Retrieve the password from the usual location (/etc/bandit_pass).
-
-## Passwords
-
-- Level 20: The password is GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+### Level 20 -> 21
+- **Goal**: There's a `setuid` binary that makes a connection on the specified port, reads a line of text, and compares it with the password of level 20. If it matches, it gives the password
