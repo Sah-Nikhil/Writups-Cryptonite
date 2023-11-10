@@ -134,7 +134,13 @@ picoCTF{ov3rfl0ws_ar3nt_that_bad_c5ca6248}
 
 ### TUNNEL VISION
 
-The downloaded file has some corrupted data. Upon opening it with a hex editor, we can see that it's a BMP file, i.e., it is a BitMap file. We see that the first line in the hex format has some errors upon comparing it to another bitmap file.
+The downloaded file has some corrupted data. Upon opening it with a hex editor, we can see that it's a BMP file, i.e., it is a BitMap file. 
+We see that the first line in the hex format has some errors upon comparing it to another bitmap file.
+File with error:
+![File with error]([URL](https://github.com/Sah-Nikhil/Writups-Cryptonite/blob/main/picoctf_ss/Screenshot%202023-11-10%20103532.png))
+
+Corrected File:
+![Corrected File]([URL](https://github.com/Sah-Nikhil/Writups-Cryptonite/blob/main/picoctf_ss/Screenshot%202023-11-10%20103813.png))
 
 Now we can see an image of presumably a waterfall/stream. But it appears to be cropped. Next, we will try to use exiftool to analyze the properties of the image. We see that it is of size 1134x306, which in hex is equal to `0x46e` and `0x132`. The hex values are in reverse (height is as `23 01`).
 
@@ -143,5 +149,6 @@ Upon trying to get correct height values for the image running values like `hex(
 Upon further trial value of 850 worked for setting the height (`0x352`) inputted as `52 03`.
 
 This gives us the final enlarged image with the exact Flag required.
+![final image]([URL(https://github.com/Sah-Nikhil/Writups-Cryptonite/blob/main/picoctf_ss/Screenshot%202023-11-10%20104900.png))
 
 ---
